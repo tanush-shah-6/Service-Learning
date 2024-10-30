@@ -42,7 +42,7 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-links > a:hover,span:hover {
+.nav-links  a:hover,span:hover {
   color: white;
   transform: scale(1.1);
   cursor: pointer;

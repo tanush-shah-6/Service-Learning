@@ -5,6 +5,8 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home"; // Your Home component
 import Signup from "./components/Signup/Signup"; // Your SignUp component
 import Login from "./components/Login/Login"; // Your SignIn component
+import ClimateTroopers from "./components/Services/ClimateTroopers";
+import Project8 from "./components/Projects/Project8";
 // import "./App.css"; // Your app-specific styles
 
 const App = () => {
@@ -19,7 +21,9 @@ const App = () => {
             <Route path="/" element={<Home />} /> 
             {/* <Route path="/signup" element={<SignUp />} /> SignUp page */}
             <Route path="/Login" element={<Login />} /> 
-            <Route path="/Signup" element={<Signup />} /> 
+            <Route path="/Signup" element={<Signup />} />
+            <Route path="/Services/ClimateTroopers" element={<ClimateTroopers />} />  
+            <Route path="/Projects/Project8" element={<Project8 />} />  
             {/* Add other routes as needed */}
           </Routes>
         </main>

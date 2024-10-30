@@ -50,7 +50,7 @@ const ClimateTroopers = () => {
       <section className="kit-section">
         <div className="kit-content">
           <h2 className="kit-heading">CLIMATE TROOPER KIT</h2>
-          <img src="./images/screenshot.jpeg" alt="Climate Trooper Kit" className="kit-image" />
+          <img src="/images/screenshot.jpeg" alt="Climate Trooper Kit" className="kit-image" />
         </div>
       </section>
     </div>

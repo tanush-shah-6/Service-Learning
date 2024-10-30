@@ -3,7 +3,7 @@
 
 .loginpage {
     font-family: 'Times New Roman', Times, serif;
-    background-image: url('background.jpg'); 
+    background-image: url('/public/images/background.jpg'); 
     background-size: cover;
     background-position: center;
     padding: 20px;

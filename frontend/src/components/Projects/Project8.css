@@ -1,0 +1,45 @@
+.main {
+    padding: 50px;
+}
+
+.overlay {
+    color: white;
+    width: 40%;
+}
+
+.first {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/images/firstimage.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.second {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/images/secondimage.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.grid-overlay {
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.grid-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.grid-block {
+    width: 30%;
+    text-align: left;
+}
+
+h3 {
+    margin: 10px;
+}

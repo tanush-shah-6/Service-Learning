@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Header.css"; 
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
+  const headerRef = useRef(null); // Reference for header
 
   const handleDropdownToggle = (dropdown) => {
     setOpenDropdown(prevState => (prevState === dropdown ? null : dropdown)); // Toggle the specified dropdown
@@ -13,8 +14,27 @@ const Header = () => {
     setOpenDropdown(null); // Close any open dropdown
   };
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        handleDropdownClose();
+      }
+    };
+
+    if (openDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openDropdown]);
+
   return (
-    <header>
+    <header ref={headerRef}>
       <nav className="navbar">
         <div className="logo">
           <a href="./home.html">
@@ -29,7 +49,7 @@ const Header = () => {
             {openDropdown === 'services' && (
               <ul className="dropdown">
                 <li onClick={handleDropdownClose}>
-                  <Link to="/Our_Services/ClimateTrooper" onClick={handleDropdownClose}>Climate Trooper</Link>
+                  <Link to="/Services/ClimateTroopers" onClick={handleDropdownClose}>Climate Trooper</Link>
                 </li>
                 <li onClick={handleDropdownClose}>
                   <Link to="/services/service-two" onClick={handleDropdownClose}>Service Two</Link>
@@ -43,7 +63,7 @@ const Header = () => {
             {openDropdown === 'projects' && (
               <ul className="dropdown">
                 <li onClick={handleDropdownClose}>
-                  <Link to="/projects/project-one" onClick={handleDropdownClose}>Project One</Link>
+                  <Link to="/Projects/Project8" onClick={handleDropdownClose}>Project 8</Link>
                 </li>
                 <li onClick={handleDropdownClose}>
                   <Link to="/projects/project-two" onClick={handleDropdownClose}>Project Two</Link>
