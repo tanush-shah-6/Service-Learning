@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Login.css'; // Ensure this path is correct
 
 const Login = () => {
@@ -25,6 +26,7 @@ const Login = () => {
   };
 
   return (
+    <div className='loginpage'>
     <div className="log-in-form">
       <a href="./home.html">
         <img src="/images/logo.png" alt="Logo" />
@@ -56,8 +58,9 @@ const Login = () => {
       </form>
       <hr />
       <p>
-        Create an account? <a href="signup.html">Sign up</a>
+        Create an account? <Link to="/signup">Sign Up</Link>
       </p>
+    </div>
     </div>
   );
 };

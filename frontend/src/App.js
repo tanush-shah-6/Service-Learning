@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header"; 
 import Footer from "./components/Footer/Footer"; 
 import Home from "./components/Home/Home"; // Your Home component
-// import SignUp from "./components/SignUp"; // Your SignUp component
+import Signup from "./components/Signup/Signup"; // Your SignUp component
 import Login from "./components/Login/Login"; // Your SignIn component
 // import "./App.css"; // Your app-specific styles
 
@@ -19,6 +19,7 @@ const App = () => {
             <Route path="/" element={<Home />} /> Home page as default
             {/* <Route path="/signup" element={<SignUp />} /> SignUp page */}
             <Route path="/Login" element={<Login />} /> SignIn page
+            <Route path="/Signup" element={<Signup />} /> SignIn page
             {/* Add other routes as needed */}
           </Routes>
         </main>
