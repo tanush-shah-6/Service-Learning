@@ -37,9 +37,9 @@ const Header = () => {
     <header ref={headerRef}>
       <nav className="navbar">
         <div className="logo">
-          <a href="./home.html">
+          <Link to="/">
             <img src="/images/logo.png" alt="logo" style={{ width: "170px", height: "58.5px" }} />
-          </a>
+          </Link>
         </div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
