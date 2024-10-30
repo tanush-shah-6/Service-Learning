@@ -1,0 +1,180 @@
+/* Main Background Container */
+.background-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('https://lh3.googleusercontent.com/qUGCp7oKsDoicHUCsHV8YmbqRcabDbkiUKnklNJJSpj-XWZVAZqk6XaJKMPjIKB4c_oPcr4bV2qIvb0i=s1600');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.content-box {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.title-text {
+    font-size: 2.5rem;
+    color: lightgreen;
+}
+
+.description-text {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.para {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* Background Wrapper */
+.bg-wrapper {
+    position: relative;
+    background-image: url('https://wallup.net/wp-content/uploads/2019/09/652112-landscape-nature-tree-forest-woods-path.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.644);
+    z-index: 1;
+}
+
+.content-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    text-align: center;
+    color: #000000;
+}
+
+.point {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.content-header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.content-paragraph {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Background Wrapper for Information */
+.background-wrapper {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                      url('https://wallpapercave.com/wp/twWLZwW.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.info-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Climate Trooper Kit Section */
+.kit-section {
+    background-color: #404040;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.kit-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.kit-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.kit-image {
+    max-width: 100%;
+    transform: scale(1.4);
+    border-radius: 8px;
+}

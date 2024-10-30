@@ -16,10 +16,10 @@ const App = () => {
         <main>
           <Routes>
             {/* Define routes for your main components */}
-            <Route path="/" element={<Home />} /> Home page as default
+            <Route path="/" element={<Home />} /> 
             {/* <Route path="/signup" element={<SignUp />} /> SignUp page */}
-            <Route path="/Login" element={<Login />} /> SignIn page
-            <Route path="/Signup" element={<Signup />} /> SignIn page
+            <Route path="/Login" element={<Login />} /> 
+            <Route path="/Signup" element={<Signup />} /> 
             {/* Add other routes as needed */}
           </Routes>
         </main>
