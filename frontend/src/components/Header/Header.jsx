@@ -72,6 +72,7 @@ const Header = () => {
               </ul>
             )}
           </li>
+          <li><Link to="/gallery">Gallery</Link></li>
           <li><Link to="/Signup" className="up">Sign Up</Link></li>
           <li><Link to="/Login" className="in">Sign In</Link></li>
         </ul>

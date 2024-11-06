@@ -7,6 +7,7 @@ import Signup from "./components/Signup/Signup"; // Your SignUp component
 import Login from "./components/Login/Login"; // Your SignIn component
 import ClimateTroopers from "./components/Services/ClimateTroopers";
 import Project8 from "./components/Projects/Project8";
+import Gallery from "./components/Gallery/Gallery";
 // import "./App.css"; // Your app-specific styles
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Routes>
             {/* Define routes for your main components */}
             <Route path="/" element={<Home />} /> 
+            <Route path="/Gallery" element={<Gallery />} /> 
             {/* <Route path="/signup" element={<SignUp />} /> SignUp page */}
             <Route path="/Login" element={<Login />} /> 
             <Route path="/Signup" element={<Signup />} />

@@ -1,0 +1,41 @@
+
+
+/* Centered Heading */
+.initiatives {
+    text-align: left; /* Centers the text horizontally */
+    font-weight: bold; /* Makes the font bold */
+    font-size: 2.5rem; /* Adjusts the font size */
+    margin-bottom: 1.5rem; /* Adds space below the heading *//* Sets a bold, classic font style */
+    color: #333; /* Optional: Dark gray color */
+  }
+/* Carousel Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Center the carousel */
+    padding: 20px; /* Adds padding around the carousel */
+  }
+  
+  /* Swiper */
+  .mySwiper {
+    padding: 10px; /* Adds inner padding within Swiper */
+    border-radius: 10px; /* Softens edges around carousel */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  }
+  
+  /* Slide Image */
+  .swiper-slide img {
+    width: 100%; /* Ensures image fills card width */
+    height: 500px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop image to fit without distortion */
+    border-radius: 8px; /* Softens image corners */
+  }
+  
+  /* Card styling */
+  .card {
+    margin: 10px; /* Adds space between slides */
+    padding: 20px; /* Space inside each card */
+    border-radius: 8px;
+    background-color: #fff; /* White background for card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for each card */
+  }
+  
