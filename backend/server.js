@@ -3,6 +3,7 @@ const { MongoClient } = require('mongodb');
 const cors = require('cors');
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+const Event = require('./models/Events');
 
 const app = express();
 const PORT = process.env.PORT || 8800;
@@ -76,13 +77,74 @@ app.post("/login", async (req, res) => {
         
         if (user) {
             console.log("Login Success");
-            return res.status(200).send("Login Successful");
+            // Send back the userId in the response along with the success message
+            return res.status(200).json({ message: "Login Successful", userId: user._id });
         } else {
             return res.status(401).send("Invalid email or password");
         }
     } catch (error) {
         console.error("Login error:", error);
         return res.status(500).send("Internal server error");
+    }
+});
+
+
+// Route to get all upcoming events
+app.get("/events", async (req, res) => {
+    const { userId } = req.query; // Get userId from query parameters
+
+    try {
+        // Fetch all events
+        const events = await Event.find();
+
+        // Add the 'registered' field to each event
+        const eventsWithRegistrationStatus = events.map(event => ({
+            ...event.toObject(),
+            registered: event.registeredUsers.includes(userId) // Check if the user is registered for this event
+        }));
+
+        res.status(200).json(eventsWithRegistrationStatus);
+    } catch (error) {
+        console.error("Error fetching events:", error);
+        res.status(500).send("Error fetching events");
+    }
+});
+
+
+// Route to register a user for an event
+app.post("/events/register", async (req, res) => {
+    const { userId, eventId } = req.body;
+
+    try {
+        const event = await Event.findById(eventId);
+        if (!event) return res.status(404).send("Event not found");
+
+        // Check if the user is already registered
+        if (event.registeredUsers.includes(userId)) {
+            return res.status(400).send("User already registered for this event");
+        }
+
+        // Add user to the event's registered users
+        event.registeredUsers.push(userId);
+        await event.save();
+
+        res.status(200).send("Registration successful");
+    } catch (error) {
+        console.error("Error registering for event:", error);
+        res.status(500).send("Error registering for event");
+    }
+});
+
+// Route to get events registered by a user
+app.get("/events/registered/:userId", async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const events = await Event.find({ registeredUsers: userId });
+        res.status(200).json(events);
+    } catch (error) {
+        console.error("Error fetching registered events:", error);
+        res.status(500).send("Error fetching registered events");
     }
 });
 

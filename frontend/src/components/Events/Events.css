@@ -1,0 +1,85 @@
+/* Global styles for events page */
+.events-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.events-header {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Event list container */
+.events-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Individual event styling */
+.event-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.event-description {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.event-date, .event-location {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Register button styling */
+.register-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #2980b9;
+}
+
+.register-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Responsiveness for small screens */
+@media screen and (max-width: 600px) {
+    .events-header {
+        font-size: 1.2rem;
+    }
+
+    .event-item {
+        padding: 15px;
+    }
+
+    .register-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}

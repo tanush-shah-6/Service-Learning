@@ -1,20 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import "./Header.css"; 
-import { Link } from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
 
 const Header = () => {
-  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
-  const headerRef = useRef(null); // Reference for header
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const headerRef = useRef(null);
+  const { userId, logout } = useAuth(); // Access userId and logout from AuthContext
+  const navigate = useNavigate();
 
   const handleDropdownToggle = (dropdown) => {
-    setOpenDropdown(prevState => (prevState === dropdown ? null : dropdown)); // Toggle the specified dropdown
+    setOpenDropdown(prevState => (prevState === dropdown ? null : dropdown));
   };
 
   const handleDropdownClose = () => {
-    setOpenDropdown(null); // Close any open dropdown
+    setOpenDropdown(null);
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (headerRef.current && !headerRef.current.contains(event.target)) {
@@ -33,6 +35,11 @@ const Header = () => {
     };
   }, [openDropdown]);
 
+  const handleLogout = () => {
+    logout();
+    navigate('/'); // Redirect to home page after logout
+  };
+
   return (
     <header ref={headerRef}>
       <nav className="navbar">
@@ -43,7 +50,7 @@ const Header = () => {
         </div>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/events">Events</Link></li>
           <li>
             <span onClick={() => handleDropdownToggle('services')}>Services</span>
             {openDropdown === 'services' && (
@@ -54,7 +61,6 @@ const Header = () => {
                 <li onClick={handleDropdownClose}>
                   <Link to="/services/service-two" onClick={handleDropdownClose}>Service Two</Link>
                 </li>
-                {/* Add more services as needed */}
               </ul>
             )}
           </li>
@@ -68,13 +74,19 @@ const Header = () => {
                 <li onClick={handleDropdownClose}>
                   <Link to="/projects/project-two" onClick={handleDropdownClose}>Project Two</Link>
                 </li>
-                {/* Add more projects as needed */}
               </ul>
             )}
           </li>
           <li><Link to="/gallery">Gallery</Link></li>
-          <li><Link to="/Signup" className="up">Sign Up</Link></li>
-          <li><Link to="/Login" className="in">Sign In</Link></li>
+
+          {userId ? (
+            <li><Link to="/" onClick={handleLogout} className="in">Logout</Link></li>
+          ) : (
+            <>
+              <li><Link to="/Signup" className="up">Sign Up</Link></li>
+              <li><Link to="/Login" className="in">Sign In</Link></li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

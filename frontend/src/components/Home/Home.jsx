@@ -33,11 +33,12 @@ const Home = () => {
   return (
     <div>
       {/* Donate Button */}
+{/*       
       <div className={`chatbot-icon ${isChatOpen ? 'open' : ''}`} onClick={toggleChat}>
-        {isChatOpen ? <FiX size={30} /> : <FiMessageCircle size={30} />} {/* Toggle between icons */}
-      </div>
+        {isChatOpen ? <FiX size={30} /> : <FiMessageCircle size={30} />} 
+      </div> */}
+{/* 
 
-     {/* Chat Window */}
      {isChatOpen && (
         <div className="chat-window">
           <div className="chat-header">
@@ -53,10 +54,9 @@ const Home = () => {
               placeholder="Type your message..."
               rows={3}
             />
-            {/* For now, we will only show the text box without the Send button */}
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Hero Section */}
       <div className="hero">
